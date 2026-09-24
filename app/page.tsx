@@ -6,9 +6,9 @@ const photos = [
 ]
 
 const services = [
-  { number: '01', icon: '✂', title: 'Corte clásico', text: 'Precisión, textura y terminaciones pensadas para tu estilo.' },
-  { number: '02', icon: '♨', title: 'Fade & degradados', text: 'Transiciones limpias y un resultado que se nota desde cualquier ángulo.' },
-  { number: '03', icon: '⌁', title: 'Barba', text: 'Perfilado, definición y terminaciones precisas para completar el look.' },
+  { number: '01', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/broche-del-pelo-p53zK6x60RwrUeoHiEBrfusAqIbsns.png', title: 'Corte clásico', text: 'Precisión, textura y terminaciones pensadas para tu estilo.' },
+  { number: '02', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/peluqueria-S4wo7F1v0cvkXT6FypgbBw74quDPpc.png', title: 'Fade & degradados', text: 'Transiciones limpias y un resultado que se nota desde cualquier ángulo.' },
+  { number: '03', image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/estilista-JdcFpvOdRQrNwVeM6fm5QOJJ2JsRJK.png', title: 'Barba', text: 'Perfilado, definición y terminaciones precisas para completar el look.' },
 ]
 
 export default function Page() {
@@ -35,7 +35,7 @@ export default function Page() {
         <div className="hero-image"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-MZ4fSPQ0kJcc3vnK3gDNy1BsgCIGv8.png" alt="Interior de EZ Studio con vista hacia la calle" /><div className="image-label"><span>01</span><span>El espacio donde<br />empieza tu próximo look.</span></div></div>
       </section>
 
-      <section className="services" id="servicios"><div className="section-heading"><div><div className="section-kicker">02 / SERVICIOS</div><h2>La experiencia en manos<br /><em>de quienes saben.</em></h2></div></div><div className="service-grid">{services.map((service) => <article className="service-card" key={service.number}><div className="service-topline"><span className="service-number">{service.number}</span><span className="service-icon" aria-hidden="true">{service.icon}</span></div><h3>{service.title}</h3><p>{service.text}</p></article>)}</div></section>
+      <section className="services" id="servicios"><div className="section-heading"><div><div className="section-kicker">02 / SERVICIOS</div><h2>La experiencia en manos<br /><em>de quienes saben.</em></h2></div></div><div className="service-grid">{services.map((service) => <article className="service-card" key={service.number}><div className="service-topline"><span className="service-number">{service.number}</span><img className="service-icon" src={service.image} alt="" aria-hidden="true" /></div><h3>{service.title}</h3><p>{service.text}</p></article>)}</div></section>
 
       <section className="statement"><div className="statement-image"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XxCNzW0XcIrdCfBAcPzGAGA55mA56f.png" alt="Interior de EZ Studio visto desde el puesto de barbería hacia el local" /></div><div className="statement-copy"><div className="section-kicker">03 / LA EXPERIENCIA</div><h2>No es solo un<br /><em>corte de pelo.</em></h2><p>Es ese momento para vos. Una pausa. Un ritual. Salís sintiéndote más vos que cuando entraste. Cada servicio combina técnica, asesoramiento y detalles cuidados para que tu estilo se sienta propio.</p><div className="quote">“La diferencia está en los detalles.”</div></div></section>
 
@@ -45,7 +45,7 @@ export default function Page() {
 
       <section className="final-cta"><h2>¿Listo para<br /><em>cambiar el look?</em></h2><a className="button button-gold" href="https://wa.me/543446572872?text=Hola%20EZ%20Studio%2C%20quiero%20reservar%20un%20turno" target="_blank" rel="noreferrer">Escribinos por WhatsApp <span>↗</span></a></section>
       <footer><a className="brand" href="#inicio"><span className="brand-mark">EZ</span><span><b>STUDIO</b><small>PELUQUERÍA · BARBERÍA</small></span></a><p>© 2024 EZ Studio · Gualeguaychú</p></footer>
-      <a className="floating-whatsapp" href="https://wa.me/543446572872?text=Hola%20EZ%20Studio%2C%20quiero%20consultar%20por%20un%20turno" target="_blank" rel="noreferrer" aria-label="Escribir por WhatsApp"><span aria-hidden="true">✆</span><b>Turnos</b></a>
+      <a className="floating-whatsapp" href="https://wa.me/543446572872?text=Hola%20EZ%20Studio%2C%20quiero%20consultar%20por%20un%20turno" target="_blank" rel="noreferrer" aria-label="Escribir por WhatsApp"><svg className="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.7 11.7 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.1 1.6 5.8L.2 24l6.6-1.7a11.8 11.8 0 0 0 5.3 1.3h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.1-1.2-6.1-3.5-8.3Zm-8.4 18.1h-.1a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.8 9.8 0 0 1-1.5-5.2C1.9 6.2 6.3 1.9 11.9 1.9c2.7 0 5.1 1 7 2.9a9.8 9.8 0 0 1 2.9 7c0 5.5-4.3 9.8-9.7 9.8Zm5.4-7.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.5-.7-2.5-1.2-3.5-2.8-.3-.5.3-.5.8-1.6.1-.2.1-.4 0-.6l-.9-2.1c-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.6s1.1 3 1.3 3.2c.2.2 2.2 3.4 5.4 4.7 2 .8 2.8.8 3.8.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.2-.1-.4-.2-.7-.4Z" /></svg><b>Turnos</b></a>
     </main>
   )
 }
