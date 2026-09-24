@@ -1,47 +1,54 @@
+const photos = [
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-j3SqbCq8Coe2UFvSxPmynezQzbdABT.png',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XxCNzW0XcIrdCfBAcPzGAGA55mA56f.png',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-MZ4fSPQ0kJcc3vnK3gDNy1BsgCIGv8.png',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-ao82amwd1ZpYmO4sDtN0NvYiONKpbj.png',
+]
+
+const services = [
+  { number: '01', title: 'Corte clásico', text: 'Precisión, textura y terminaciones pensadas para tu estilo.' },
+  { number: '02', title: 'Fade & degradados', text: 'Transiciones limpias y un resultado que se nota desde cualquier ángulo.' },
+  { number: '03', title: 'Barba', text: 'Perfilado, definición y ritual de toalla caliente para completar el look.' },
+]
+
 export default function Page() {
   return (
-    <main
-      style={{
-        colorScheme: 'light dark',
-        position: 'relative',
-        display: 'flex',
-        minHeight: '100vh',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'light-dark(#fff, #000)',
-        color: 'light-dark(#000, #fff)',
-      }}
-    >
-      <svg
-        aria-hidden="true"
-        style={{ width: 80, height: 80 }}
-        width={80}
-        height={80}
-        fill="none"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-        stroke="currentColor"
-        strokeWidth="0.5"
-      >
-        <path
-          d="M14.2 14.2H17V6.9375C17 4.76288 15.2371 3 13.0625 3H5.8V5.8M14.2 14.2V7.79063L7.79062 14.2H14.2ZM14.2 14.2V17H6.9375C4.76288 17 3 15.2371 3 13.0625V5.8H5.8M5.8 5.8V12.2313L12.2313 5.8H5.8Z"
-          strokeLinejoin="round"
-        />
-      </svg>
-      <p
-        style={{
-          position: 'absolute',
-          left: '50%',
-          top: 'calc(50% + 56px)',
-          transform: 'translateX(-50%)',
-          whiteSpace: 'nowrap',
-          fontSize: '14px',
-          fontWeight: 500,
-          color: 'light-dark(#71717a, #a1a1aa)',
-        }}
-      >
-        Your v0 generation will show here.
-      </p>
+    <main>
+      <header className="site-header">
+        <a className="brand" href="#inicio" aria-label="EZ Studio, inicio">
+          <span className="brand-mark">EZ</span>
+          <span><b>EZ STUDIO</b><small>PELUQUERÍA · BARBERÍA</small></span>
+        </a>
+        <nav aria-label="Navegación principal">
+          <a href="#servicios">Servicios</a><a href="#estudio">El estudio</a><a href="#galeria">Galería</a><a href="#ubicacion">Ubicación</a>
+        </nav>
+        <a className="header-cta" href="https://wa.me/543446572872?text=Hola%20EZ%20Studio%2C%20quiero%20consultar%20por%20un%20turno" target="_blank" rel="noreferrer">Reservar turno <span>↗</span></a>
+      </header>
+
+      <section className="hero" id="inicio">
+        <div className="hero-copy">
+          <p className="eyebrow"><span /> Gualeguaychú · Entre Ríos</p>
+          <h1>Tu estilo.<br /><em>Nuestra firma.</em></h1>
+          <p className="hero-text">Peluquería y barbería para quienes entienden que un buen corte cambia todo.</p>
+          <div className="hero-actions"><a className="button button-gold" href="https://wa.me/543446572872?text=Hola%20EZ%20Studio%2C%20quiero%20reservar%20un%20turno" target="_blank" rel="noreferrer">Reservá tu turno <span>↗</span></a><a className="text-link" href="#servicios">Conocé nuestros servicios <span>↓</span></a></div>
+          <div className="hero-proof"><strong>5.0 <span>★★★★★</span></strong><span>Más de 4 reseñas en Google</span></div>
+        </div>
+        <div className="hero-image"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XxCNzW0XcIrdCfBAcPzGAGA55mA56f.png" alt="Interior de EZ Studio con sillón de barbería" /><div className="image-label"><span>01</span><span>El espacio donde<br />empieza tu próximo look.</span></div></div>
+      </section>
+
+      <section className="intro" id="estudio"><div className="section-kicker">01 / EL ESTUDIO</div><div><h2>Un lugar para<br /><em>verte mejor.</em></h2></div><div className="intro-text"><p>En EZ Studio creemos que el estilo no se improvisa. Se trabaja con técnica, escucha y atención a cada detalle.</p><p>Un espacio cálido, una experiencia personalizada y el corte que estabas buscando.</p><a className="text-link" href="#ubicacion">Conocé el estudio <span>↗</span></a></div></section>
+
+      <section className="services" id="servicios"><div className="section-heading"><div><div className="section-kicker">02 / SERVICIOS</div><h2>Hecho a tu <em>medida.</em></h2></div><p>Desde un refresh hasta una transformación completa. Elegí cómo querés verte.</p></div><div className="service-grid">{services.map((service) => <article className="service-card" key={service.number}><span className="service-number">{service.number}</span><h3>{service.title}</h3><p>{service.text}</p><a href="https://wa.me/543446572872?text=Hola%20EZ%20Studio%2C%20quiero%20consultar%20por%20este%20servicio" target="_blank" rel="noreferrer" aria-label={`Consultar por ${service.title}`}>Consultar <span>↗</span></a></article>)}</div></section>
+
+      <section className="statement"><div className="statement-image"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-KemuiumrdS5yFlplAHx4dtxdxoXNKm.png" alt="Logo dorado de EZ Studio sobre fondo negro" /></div><div className="statement-copy"><div className="section-kicker">03 / LA EXPERIENCIA</div><h2>No es solo un<br /><em>corte de pelo.</em></h2><p>Es ese momento para vos. Una pausa. Un ritual. Salís sintiéndote más vos que cuando entraste.</p><div className="quote">“La diferencia está en los detalles.”</div></div></section>
+
+      <section className="gallery" id="galeria"><div className="section-heading"><div><div className="section-kicker">04 / GALERÍA</div><h2>El resultado<br /><em>habla solo.</em></h2></div><a className="text-link" href="https://www.instagram.com/ezstudio666/" target="_blank" rel="noreferrer">Ver Instagram <span>↗</span></a></div><div className="gallery-grid">{photos.map((photo, index) => <img key={photo} src={photo} alt={`Trabajo y espacio de EZ Studio ${index + 1}`} loading="lazy" />)}</div></section>
+
+      <section className="location" id="ubicacion"><div><div className="section-kicker">05 / ENCONTRANOS</div><h2>Tu próximo look<br />está <em>acá.</em></h2><p>Gervasio Méndez 359<br />Gualeguaychú, Entre Ríos</p><p className="hours"><b>Lunes a sábados</b><br />09:00 — 21:00 h</p><a className="button button-outline" href="https://www.google.com/maps/search/?api=1&query=Gervasio+Mendez+359+Gualeguaychu" target="_blank" rel="noreferrer">Cómo llegar <span>↗</span></a></div><div className="map-card" aria-label="Mapa de ubicación de EZ Studio"><span className="map-pin">EZ</span><span className="map-road road-one" /><span className="map-road road-two" /><span className="map-label">Gervasio Méndez 359</span></div></section>
+
+      <section className="final-cta"><p className="eyebrow"><span /> Estamos listos para vos</p><h2>¿Listo para<br /><em>cambiar el look?</em></h2><a className="button button-gold" href="https://wa.me/543446572872?text=Hola%20EZ%20Studio%2C%20quiero%20reservar%20un%20turno" target="_blank" rel="noreferrer">Escribinos por WhatsApp <span>↗</span></a></section>
+      <footer><a className="brand" href="#inicio"><span className="brand-mark">EZ</span><span><b>EZ STUDIO</b><small>PELUQUERÍA · BARBERÍA</small></span></a><p>© 2024 EZ Studio · Gualeguaychú</p><a href="https://www.instagram.com/ezstudio666/" target="_blank" rel="noreferrer">Instagram ↗</a></footer>
+      <a className="floating-whatsapp" href="https://wa.me/543446572872?text=Hola%20EZ%20Studio%2C%20quiero%20consultar%20por%20un%20turno" target="_blank" rel="noreferrer" aria-label="Escribir por WhatsApp">✆</a>
     </main>
   )
 }

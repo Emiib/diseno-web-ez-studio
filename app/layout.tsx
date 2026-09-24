@@ -1,49 +1,17 @@
-import { Analytics } from '@vercel/analytics/next'
-import type { Metadata, Viewport } from 'next'
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
+  title: 'EZ Studio | Peluquería & Barbería en Gualeguaychú',
+  description: 'Peluquería y barbería en Gualeguaychú, Entre Ríos. Cortes, fades y barba con atención personalizada.',
+  keywords: ['peluquería Gualeguaychú', 'barbería Gualeguaychú', 'EZ Studio', 'corte de pelo', 'fade', 'barba'],
+  alternates: { canonical: 'https://ezstudio666.com/' },
+  openGraph: { title: 'EZ Studio | Peluquería & Barbería', description: 'Tu estilo. Nuestra firma. Reservá tu turno en Gualeguaychú.', type: 'website', locale: 'es_AR' },
+  twitter: { card: 'summary_large_image', title: 'EZ Studio | Peluquería & Barbería', description: 'Tu estilo. Nuestra firma.' },
 }
 
-export const viewport: Viewport = {
-  colorScheme: 'light dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
-}
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
-  return (
-    <html lang="en">
-      <body className="antialiased">
-        {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
-      </body>
-    </html>
-  )
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
+  const businessSchema = { '@context': 'https://schema.org', '@type': 'HairSalon', name: 'EZ Studio - Peluquería & Barbería', url: 'https://ezstudio666.com/', telephone: '+54 3446 57-2872', address: { '@type': 'PostalAddress', streetAddress: 'Gervasio Méndez 359', addressLocality: 'Gualeguaychú', addressRegion: 'Entre Ríos', addressCountry: 'AR' }, openingHours: 'Mo-Sa 09:00-21:00', sameAs: ['https://www.instagram.com/ezstudio666/'] }
+  return <html lang="es"><body>{children}<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }} /></body></html>
 }
