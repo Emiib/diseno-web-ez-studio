@@ -17,7 +17,7 @@ export default function Page() {
       <header className="site-header">
         <a className="brand" href="#inicio" aria-label="EZ Studio, inicio">
           <span className="brand-mark">EZ</span>
-          <span><b>EZ STUDIO</b><small>PELUQUERÍA · BARBERÍA</small></span>
+          <span><b>STUDIO</b><small>PELUQUERÍA · BARBERÍA</small></span>
         </a>
         <nav aria-label="Navegación principal">
           <a href="#servicios">Servicios</a><a href="#estudio">El estudio</a><a href="#galeria">Galería</a><a href="#ubicacion">Ubicación</a>
@@ -46,7 +46,7 @@ export default function Page() {
       <section className="location" id="ubicacion"><div><div className="section-kicker">05 / ENCONTRANOS</div><h2>Tu próximo look<br />está <em>acá.</em></h2><p>Gervasio Méndez 359<br />Gualeguaychú, Entre Ríos</p><p className="hours"><b>Lunes a sábados</b><br />09:00 — 21:00 h</p><a className="button button-outline" href="https://www.google.com/maps/search/?api=1&query=Gervasio+Mendez+359+Gualeguaychu" target="_blank" rel="noreferrer">Cómo llegar <span>↗</span></a></div><div className="map-card"><iframe title="Mapa de ubicación de EZ Studio" src="https://www.google.com/maps?q=Gervasio%20Mendez%20359%2C%20Gualeguaychu%2C%20Entre%20Rios&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade" /></div></section>
 
       <section className="final-cta"><p className="eyebrow"><span /> Estamos listos para vos</p><h2>¿Listo para<br /><em>cambiar el look?</em></h2><a className="button button-gold" href="https://wa.me/543446572872?text=Hola%20EZ%20Studio%2C%20quiero%20reservar%20un%20turno" target="_blank" rel="noreferrer">Escribinos por WhatsApp <span>↗</span></a></section>
-      <footer><a className="brand" href="#inicio"><span className="brand-mark">EZ</span><span><b>EZ STUDIO</b><small>PELUQUERÍA · BARBERÍA</small></span></a><p>© 2024 EZ Studio · Gualeguaychú</p></footer>
+      <footer><a className="brand" href="#inicio"><span className="brand-mark">EZ</span><span><b>STUDIO</b><small>PELUQUERÍA · BARBERÍA</small></span></a><p>© 2024 EZ Studio · Gualeguaychú</p></footer>
       <a className="floating-whatsapp" href="https://wa.me/543446572872?text=Hola%20EZ%20Studio%2C%20quiero%20consultar%20por%20un%20turno" target="_blank" rel="noreferrer" aria-label="Escribir por WhatsApp"><span aria-hidden="true">✆</span><b>Turnos</b></a>
     </main>
   )
