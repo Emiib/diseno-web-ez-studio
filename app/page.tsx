@@ -19,7 +19,15 @@ const services = [
 const waUrl = 'https://wa.me/543446572872?text=Hola%20EZ%20Studio%2C%20quiero%20reservar%20un%20turno'
 
 function Reveal({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  return <motion.div className={className} initial={{ opacity: 0, y: 24, filter: 'blur(8px)' }} whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}>{children}</motion.div>
+  return <motion.div className={className} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}>{children}</motion.div>
+}
+
+function SceneTransition({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  const ref = useRef<HTMLElement>(null)
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
+  const y = useTransform(scrollYProgress, [0, .45, 1], [34, 0, -24])
+  const scale = useTransform(scrollYProgress, [0, .45, 1], [.985, 1, .985])
+  return <motion.section ref={ref} className={`scene-transition ${className}`} style={{ y, scale }}>{children}</motion.section>
 }
 
 function Intro() {
@@ -60,7 +68,7 @@ function Services() {
 }
 
 function Experience() {
-  return <section className="statement" id="estudio"><Reveal className="statement-image"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XxCNzW0XcIrdCfBAcPzGAGA55mA56f.png" alt="Interior de EZ Studio visto desde el puesto de barbería hacia el local" loading="lazy" /></Reveal><div className="statement-copy"><Reveal><div className="section-kicker">03 / LA EXPERIENCIA</div><h2>No es solo un<br /><em>corte de pelo.</em></h2><p>Es ese momento para vos. Una pausa. Un ritual. Salís sintiéndote más vos que cuando entraste. Cada servicio combina técnica, asesoramiento y detalles cuidados para que tu estilo se sienta propio.</p><div className="quote">“La diferencia está en los detalles.”</div></Reveal></div></section>
+  return <SceneTransition className="statement" ><Reveal className="statement-image"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-XxCNzW0XcIrdCfBAcPzGAGA55mA56f.png" alt="Interior de EZ Studio visto desde el puesto de barbería hacia el local" loading="lazy" /></Reveal><div className="statement-copy"><Reveal><div className="section-kicker">03 / LA EXPERIENCIA</div><h2>No es solo un<br /><em>corte de pelo.</em></h2><p>Es ese momento para vos. Una pausa. Un ritual. Salís sintiéndote más vos que cuando entraste. Cada servicio combina técnica, asesoramiento y detalles cuidados para que tu estilo se sienta propio.</p><div className="quote">“La diferencia está en los detalles.”</div></Reveal></div></SceneTransition>
 }
 
 export default function Page() {
