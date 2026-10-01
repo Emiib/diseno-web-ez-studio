@@ -34,4 +34,4 @@ footer { border-top:1px solid var(--line); padding:32px 5vw; display:flex; align
 /* WhatsApp mark: keep the vector icon as the only visual source. */
 .floating-whatsapp { background-image:none !important; animation:whatsapp-pulse 2.4s ease-in-out infinite; }
 .floating-whatsapp .whatsapp-icon { width:30px; height:30px; display:block; flex:none; margin:0; transform:none; fill:currentColor; }
-.floating-whatsapp .whatsapp-icon path { display:block; }.floating-whatsapp .whatsapp-icon path:nth-child(2) { fill:currentColor; }
+.floating-whatsapp .whatsapp-icon path { display:block; }.floating-whatsapp .whatsapp-icon path:first-child { fill:currentColor; }.floating-whatsapp .whatsapp-icon path:nth-child(2) { fill:var(--gold); }
